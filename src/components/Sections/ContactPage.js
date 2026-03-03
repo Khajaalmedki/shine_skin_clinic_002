@@ -4,9 +4,6 @@
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import RootLayout from '@/components/layout/RootLayout';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { SectionTitle, DisplayHeading } from '@/components/UI/Typography';
 import { siteConfig } from '@/dataConfig';
 import { MapPin, Phone, Clock, Mail, CheckCircle } from 'lucide-react';
@@ -79,8 +76,7 @@ export default function ContactPage() {
   const { contact } = siteConfig;
 
   return (
-    <RootLayout>
-      <Header />
+
       <main className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white min-h-screen">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           {/* Hero */}
@@ -253,7 +249,6 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </RootLayout>
+
   );
 }

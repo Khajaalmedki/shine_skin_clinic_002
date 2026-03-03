@@ -5,17 +5,17 @@ import Link from 'next/link';
 import { Instagram, Facebook, Linkedin, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import { siteConfig } from '@/dataConfig';
 
-export default function Footer() {
+export default function Footer( { slug } ) {
   const { contactDetails, brand } = siteConfig;
 
   const footer = {
     tagline: "Transforming skin, transforming lives.",
     quickLinks: [
-      { label: "Home", href: "/" },
-      { label: "Services", href: "/services" },
-      { label: "Contact", href: "/contact" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
+      { label: "Home", href: `${slug}/` },
+      { label: "Services", href: `${slug}/services` },
+      { label: "Contact", href: `${slug}/contact` },
+      { label: "Privacy Policy", href: `${slug}/privacy` },
+      { label: "Terms of Service", href: `${slug}/terms` },
     ],
     newsletter: {
       title: "Stay Updated",

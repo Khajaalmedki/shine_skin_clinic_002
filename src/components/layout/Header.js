@@ -7,17 +7,17 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
-export default function Header() {
+export default function Header( { slug } ) {
 
   const navigation = {
     main: [
-      { label: "Home", href: "/", id: "home" },
-      { label: "Services", href: "/services", id: "services" },
-      { label: "Contact", href: "/contact", id: "contact" },
+      { label: "Home", href: `/${slug}`, id: "home" },
+      { label: "Services", href: `/${slug}/services`, id: "services" },
+      { label: "Contact", href: `/${slug}/contact`, id: "contact" },
     ],
     cta: {
       label: "Book Consultation",
-      href: "/contact",
+      href: `/${slug}/contact`,
     },
   }
 

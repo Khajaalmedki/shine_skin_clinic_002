@@ -4,19 +4,19 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import RootLayout from '@/components/layout/RootLayout';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { SectionTitle, DisplayHeading, BodyText } from '@/components/UI/Typography';
-import { PrimaryButton } from '@/components/UI/Buttons';
 import Testimonials from '@/components/Sections/Testimonials';
 import CTA from '@/components/Sections/CTA';
-import { siteConfig } from '@/dataConfig';
 import { Clock, ArrowUpRight } from 'lucide-react';
+
+//import { siteConfig } from '@/dataConfig';
+//import { PrimaryButton } from '@/components/UI/Buttons';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 function ServiceCard({ service, index, color }) {
+
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -75,7 +75,8 @@ function ServiceCard({ service, index, color }) {
   );
 }
 
-export default function ServicesPage() {
+export default function ServicePage( {siteConfig} ) {
+
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -92,53 +93,49 @@ export default function ServicesPage() {
   const { services } = siteConfig;
 
   return (
-    <RootLayout>
-      <Header />
-      <main>
+    <main>
         {/* Hero */}
         <section ref={heroRef} className="pt-40 pb-20 lg:pt-56 lg:pb-32 bg-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-teal-50/30 to-transparent" />
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+            <div className="absolute inset-0 bg-gradient-to-b from-teal-50/30 to-transparent" />
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
             <div className="services-hero-content max-w-3xl">
-              <SectionTitle>Our Expertise</SectionTitle>
-              <h1 className="text-6xl lg:text-8xl font-light text-slate-900 mb-6 leading-[0.9]">
+                <SectionTitle>Our Expertise</SectionTitle>
+                <h1 className="text-6xl lg:text-8xl font-light text-slate-900 mb-6 leading-[0.9]">
                 {services.hero.headline}{' '}
                 <span className="text-teal-600">{services.hero.headlineAccent}</span>
-              </h1>
-              <BodyText>{services.hero.subheadline}</BodyText>
+                </h1>
+                <BodyText>{services.hero.subheadline}</BodyText>
             </div>
-          </div>
+            </div>
         </section>
 
         {/* Services Categories */}
         <section className="py-20 lg:py-32 bg-slate-50">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 space-y-32">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 space-y-32">
             {services.categories.map((category) => (
-              <div key={category.id} className="scroll-mt-24" id={category.id}>
+                <div key={category.id} className="scroll-mt-24" id={category.id}>
                 <div className="mb-12 border-b border-slate-200 pb-8">
-                  <h2 className="text-3xl lg:text-5xl font-light text-slate-900 mb-4">{category.title}</h2>
-                  <p className="text-slate-600 max-w-2xl">{category.description}</p>
+                    <h2 className="text-3xl lg:text-5xl font-light text-slate-900 mb-4">{category.title}</h2>
+                    <p className="text-slate-600 max-w-2xl">{category.description}</p>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-6">
-                  {category.treatments.map((treatment, index) => (
+                    {category.treatments.map((treatment, index) => (
                     <ServiceCard 
-                      key={treatment.id} 
-                      service={treatment} 
-                      index={index}
-                      color={category.color}
+                        key={treatment.id} 
+                        service={treatment} 
+                        index={index}
+                        color={category.color}
                     />
-                  ))}
+                    ))}
                 </div>
-              </div>
+                </div>
             ))}
-          </div>
+            </div>
         </section>
 
         <Testimonials data={services.testimonials} />
         <CTA data={services.cta} />
-      </main>
-      <Footer />
-    </RootLayout>
+    </main>
   );
 }
