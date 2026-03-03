@@ -76,7 +76,7 @@ export default function Hero({ data }) {
       <div className="absolute inset-0 z-0">
         <div ref={imageRef} className="absolute inset-0 scale-110">
           <Image
-            src="/doctor.jpg"
+            src="/images/doctor.jpg"
             alt={data.drname}
             fill
             className="object-cover"

@@ -86,7 +86,7 @@ export default function About({ data, docImg }) {
             <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
               <div ref={imageRef} className="absolute inset-0 scale-125">
                 <Image
-                  src="/doctor.jpg" //{docImg}
+                  src="/images/doctor.jpg" //{docImg}
                   alt="doctor-jpg"
                   fill
                   className="object-cover"
