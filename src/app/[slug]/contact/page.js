@@ -9,11 +9,11 @@ import ContactPage from "@/components/Sections/ContactPage";
 export default async function ContactPages( {params} ) {
   
   const {slug} = await params
-  console.log("Contact Slug", slug)
+  const siteConfig = await getClientData(slug);
 
   return (
     <RootLayout>
-      <Header slug={slug} />
+      <Header slug={slug} brand={siteConfig.brand}/>
       <ContactPage />
       <Footer slug={slug} />
     </RootLayout>

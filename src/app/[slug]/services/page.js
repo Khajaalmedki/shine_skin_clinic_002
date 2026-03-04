@@ -13,7 +13,7 @@ export default async function ServicesPage({ params }) {
 
   return (
     <RootLayout>
-      <Header slug={slug} />
+      <Header slug={slug} brand={siteConfig.brand}/>
       <ServicePage siteConfig={siteConfig} slug={slug} />
       <Footer slug={slug} />
     </RootLayout>

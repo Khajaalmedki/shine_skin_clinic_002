@@ -23,9 +23,9 @@ export default async function Home( {params} ) {
 
   return (
     <RootLayout>
-      <Header slug={slug} />
+      <Header slug={slug} brand={siteConfig.brand}/>
       <main>
-        <Hero data={siteConfig.brand} />
+        <Hero data={siteConfig.brand} slug={slug}/>
         <Specialties data={siteConfig.home.specialties} />
         <About data={siteConfig.brand} />
         <Testimonials />

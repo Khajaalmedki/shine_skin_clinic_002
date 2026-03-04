@@ -10,7 +10,7 @@ import { siteConfig } from '@/dataConfig';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero({ data }) {
+export default function Hero({ data, slug }) {
 
   const stats = [
         { value: "12+", label: "Years Experience" },
@@ -120,10 +120,10 @@ export default function Hero({ data }) {
             </p>
 
             <div className="hero-cta flex flex-col sm:flex-row gap-4 pt-4">
-              <PrimaryButton href="/services">
+              <PrimaryButton href={`/${slug}/services`}>
                 Begin Your Journey
               </PrimaryButton>
-              <SecondaryButton href="#about">
+              <SecondaryButton href={`/${slug}#about`}>
                 Meet Dr. {data.subname}
               </SecondaryButton>
             </div>
