@@ -8,7 +8,7 @@ import { PrimaryButton } from '@/components/UI/Buttons';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function CTA() {
+export default function CTA( {slug} ) {
 
   const cta = {
       headline: "Your Skin Deserves",
@@ -54,7 +54,7 @@ export default function CTA() {
           <p className="text-xl text-slate-600 mb-12 leading-relaxed">
             {cta.subtext}
           </p>
-          <PrimaryButton href="/contact">
+          <PrimaryButton href='${slug}/contact'>
             {cta.buttonText}
           </PrimaryButton>
         </div>

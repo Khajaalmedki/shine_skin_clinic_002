@@ -9,8 +9,7 @@ import { SectionTitle, BodyText } from '@/components/UI/Typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function About({ data, docImg }) {
-  console.log(data)
+export default function About({ data }) {
   const values = [
         {
           title: "Evidence-Based",

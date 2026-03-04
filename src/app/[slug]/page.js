@@ -29,7 +29,7 @@ export default async function Home( {params} ) {
         <Specialties data={siteConfig.home.specialties} />
         <About data={siteConfig.brand} />
         <Testimonials />
-        <CTA/>
+        <CTA slug={slug} />
       </main>
       <Footer slug={slug} />
     </RootLayout>
