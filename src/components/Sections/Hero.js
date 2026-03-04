@@ -74,7 +74,7 @@ export default function Hero({ data, slug }) {
     >
       {/* Background Image with Light Overlay */}
       <div className="absolute inset-0 z-0">
-        <div ref={imageRef} className="absolute inset-0 scale-110">
+        <div ref={imageRef} className="absolute inset-0 scale-100 lg:scale-110">
           {/* <Image
             src="/images/hero.png"
             alt={data.drname}
