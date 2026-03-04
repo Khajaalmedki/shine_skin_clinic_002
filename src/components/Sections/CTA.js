@@ -54,7 +54,7 @@ export default function CTA( {slug} ) {
           <p className="text-xl text-slate-600 mb-12 leading-relaxed">
             {cta.subtext}
           </p>
-          <PrimaryButton href='${slug}/contact'>
+          <PrimaryButton href={`/${slug}/contact`}>
             {cta.buttonText}
           </PrimaryButton>
         </div>
