@@ -74,23 +74,34 @@ export default function Hero({ data }) {
     >
       {/* Background Image with Light Overlay */}
       <div className="absolute inset-0 z-0">
-        <div ref={imageRef} className="absolute inset-0 scale-110">
-          <Image
-            src="/images/doctor.jpg"
+        <div ref={imageRef} className="absolute inset-0 scale-70 lg:scale-110">
+          {/* <Image
+            src="/images/hero.png"
             alt={data.drname}
             fill
             className="object-cover"
             priority
             quality={90}
-          />
+          /> */}
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet="/images/desktop-hero.png"
+            />
+            
+            <img
+              src="/images/mobile-hero.png"
+              alt="Doctor Hero"
+            />
+          </picture>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/65 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/55 to-transparent" />
       </div>
 
       {/* Content */}
       <div ref={contentRef} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-6 items-center">
           <div className="space-y-8">
             <div className="space-y-2 perspective-1000">
               <h1 className="hero-headline text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-light tracking-tight leading-[0.9] text-slate-900">

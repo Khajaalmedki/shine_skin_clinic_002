@@ -54,15 +54,17 @@ export default function Specialties({ data }) {
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {data.services.map((service, index) => (
+          
             <div 
               key={service.id}
               className="specialty-card group relative bg-white border border-slate-200 overflow-hidden hover:border-teal-200 shadow-sm hover:shadow-2xl transition-all duration-700"
             >
               {/* Image Container */}
               <div className="relative h-80 overflow-hidden">
+                {console.log("service images", service.srcImg)}
                 <Image
-                  src={service.image}
-                  alt={service.title}
+                  src = {service.image}
+                  alt = {service.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />

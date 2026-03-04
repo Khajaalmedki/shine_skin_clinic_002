@@ -79,14 +79,14 @@ export default function About({ data, docImg }) {
 
   return (
     <section ref={sectionRef} id="about" className="py-32 lg:py-48 bg-white relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image Column */}
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
               <div ref={imageRef} className="absolute inset-0 scale-125">
                 <Image
-                  src="/images/doctor.jpg" //{docImg}
+                  src={data.drImage}
                   alt="doctor-jpg"
                   fill
                   className="object-cover"
