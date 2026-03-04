@@ -55,7 +55,7 @@ export default function Header( { slug } ) {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
-            <Link href="/" className="relative z-50 group">
+            <Link href={`/${slug}/`} className="relative z-50 group">
               <div className="flex flex-col">
                 <span className="text-xl lg:text-2xl font-light tracking-tight text-slate-900 group-hover:text-teal-600 transition-colors duration-500">
                   Dr. Heena Firdouz

@@ -11,11 +11,11 @@ export default function Footer( { slug } ) {
   const footer = {
     tagline: "Transforming skin, transforming lives.",
     quickLinks: [
-      { label: "Home", href: `${slug}/` },
-      { label: "Services", href: `${slug}/services` },
-      { label: "Contact", href: `${slug}/contact` },
-      { label: "Privacy Policy", href: `${slug}/privacy` },
-      { label: "Terms of Service", href: `${slug}/terms` },
+      { label: "Home", href: `/${slug}/` },
+      { label: "Services", href: `/${slug}/services` },
+      { label: "Contact", href: `/${slug}/contact` },
+      { label: "Privacy Policy", href: `/${slug}/privacy` },
+      { label: "Terms of Service", href: `/${slug}/terms` },
     ],
     newsletter: {
       title: "Stay Updated",

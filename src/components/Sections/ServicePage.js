@@ -75,7 +75,7 @@ function ServiceCard({ service, index, color }) {
   );
 }
 
-export default function ServicePage( {siteConfig} ) {
+export default function ServicePage( {siteConfig, slug} ) {
 
   const heroRef = useRef(null);
 
@@ -135,7 +135,7 @@ export default function ServicePage( {siteConfig} ) {
         </section>
 
         <Testimonials data={services.testimonials} />
-        <CTA data={services.cta} />
+        <CTA slug={slug} />
     </main>
   );
 }
