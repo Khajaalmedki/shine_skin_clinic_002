@@ -124,7 +124,7 @@ export default function Hero({ data, slug }) {
                 Begin Your Journey
               </PrimaryButton>
               <SecondaryButton href={`/${slug}#about`}>
-                Meet Dr. {data.subname}
+                Meet Dr. {data.drsubname}
               </SecondaryButton>
             </div>
           </div>
