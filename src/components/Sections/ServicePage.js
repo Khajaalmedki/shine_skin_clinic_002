@@ -9,7 +9,7 @@ import Testimonials from '@/components/Sections/Testimonials';
 import CTA from '@/components/Sections/CTA';
 import { Clock, ArrowUpRight } from 'lucide-react';
 
-//import { siteConfig } from '@/dataConfig';
+import { siteConfig } from '@/dataConfig';
 //import { PrimaryButton } from '@/components/UI/Buttons';
 
 
@@ -75,7 +75,7 @@ function ServiceCard({ service, index, color }) {
   );
 }
 
-export default function ServicePage( {siteConfig, slug} ) {
+export default function ServicePage( {slug} ) {
 
   const heroRef = useRef(null);
 

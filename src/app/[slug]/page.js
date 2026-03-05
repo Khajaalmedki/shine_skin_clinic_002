@@ -26,7 +26,7 @@ export default async function Home( {params} ) {
       <Header slug={slug} brand={siteConfig.brand}/>
       <main>
         <Hero data={siteConfig.brand} slug={slug}/>
-        <Specialties data={siteConfig.home.specialties} />
+        <Specialties />
         <About data={siteConfig.brand} />
         <Testimonials />
         <CTA slug={slug} />

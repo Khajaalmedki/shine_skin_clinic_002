@@ -11,7 +11,9 @@ import { siteConfig } from '@/dataConfig';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Specialties({ data }) {
+export default function Specialties() {
+  const data = siteConfig.home.specialties
+
   const sectionRef = useRef(null);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactPage from "@/components/Sections/ContactPage";
 
-//import { getClientData } from '../layout';
+import { getClientData } from '../layout';
 
 export default async function ContactPages( {params} ) {
   

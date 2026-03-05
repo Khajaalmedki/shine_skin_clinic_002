@@ -18,6 +18,7 @@ export async function getClientData(slug) {
 
   if (error || !data) console.log(error);
 
+  console.log(data)
   return data.client_details
 
 }

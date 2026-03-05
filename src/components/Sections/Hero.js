@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { PrimaryButton, SecondaryButton } from '@/components/UI/Buttons';
-import { siteConfig } from '@/dataConfig';
+//import { siteConfig } from '@/dataConfig';
 
 gsap.registerPlugin(ScrollTrigger);
 
