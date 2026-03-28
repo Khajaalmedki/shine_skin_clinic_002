@@ -7,7 +7,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
-export default function Header( { slug, brand } ) {
+export default function Header( { slug, clinicName } ) {
 
   const navigation = {
     main: [
@@ -46,7 +46,7 @@ export default function Header( { slug, brand } ) {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed top-8 left-0 right-0 z-50 transition-all duration-700 ${
           isScrolled 
             ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm' 
             : 'bg-transparent'
@@ -58,7 +58,7 @@ export default function Header( { slug, brand } ) {
             <Link href={`/${slug}/`} className="relative z-50 group">
               <div className="flex flex-col">
                 <span className="text-xl lg:text-2xl font-light tracking-tight text-slate-900 group-hover:text-teal-600 transition-colors duration-500">
-                  {brand.clinicName}
+                  {clinicName}
                 </span>
                 <span className="text-[10px] lg:text-xs tracking-[0.3em] uppercase text-slate-500 group-hover:text-slate-600 transition-colors duration-500">
                   Dermatology & Aesthetics

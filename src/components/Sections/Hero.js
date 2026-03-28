@@ -10,7 +10,7 @@ import { PrimaryButton, SecondaryButton } from '@/components/UI/Buttons';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero({ data, slug }) {
+export default function Hero({ drname, slug }) {
 
   const stats = [
         { value: "12+", label: "Years Experience" },
@@ -70,14 +70,14 @@ export default function Hero({ data, slug }) {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 lg:pt-24 bg-white"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 lg:pt-32 bg-white"
     >
       {/* Background Image with Light Overlay */}
       <div className="absolute inset-0 z-0">
         <div ref={imageRef} className="absolute inset-0 scale-100 lg:scale-110">
           {/* <Image
             src="/images/hero.png"
-            alt={data.drname}
+            alt={drname}
             fill
             className="object-cover"
             priority
@@ -120,11 +120,11 @@ export default function Hero({ data, slug }) {
             </p>
 
             <div className="hero-cta flex flex-col sm:flex-row gap-4 pt-4">
-              <PrimaryButton href={`/${slug}/services`}>
+              <PrimaryButton href={`/${slug}/contact`}>
                 Begin Your Journey
               </PrimaryButton>
               <SecondaryButton href={`/${slug}#about`}>
-                Meet Dr. {data.drsubname}
+                Meet Dr. {drname}
               </SecondaryButton>
             </div>
           </div>

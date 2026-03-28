@@ -7,11 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { ArrowUpRight, Clock, Sparkles } from 'lucide-react';
 import { SectionTitle, DisplayHeading } from '@/components/UI/Typography';
+import { PrimaryButton, SecondaryButton } from '@/components/UI/Buttons';
 import { siteConfig } from '@/dataConfig';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Specialties() {
+export default function Specialties( {slug} ) {
   const data = siteConfig.home.specialties
 
   const sectionRef = useRef(null);
@@ -109,6 +111,12 @@ export default function Specialties() {
               <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-teal-200/30 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             </div>
           ))}
+        </div>
+        {/* CTA */}
+        <div className="mt-20 w-full flex justify-center">
+          <PrimaryButton href={`/${slug}/services`}>
+            Explore More Services
+          </PrimaryButton>
         </div>
       </div>
     </section>

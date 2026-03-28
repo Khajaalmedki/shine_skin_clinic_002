@@ -6,25 +6,32 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { SectionTitle, BodyText } from '@/components/UI/Typography';
+import { siteConfig } from '@/dataConfig';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function About({ data }) {
-  const values = [
-        {
-          title: "Evidence-Based",
-          description: "Every treatment backed by peer-reviewed research",
-        },
-        {
-          title: "Personalized",
-          description: "Protocols tailored to your skin's unique biology",
-        },
-        {
-          title: "Holistic",
-          description: "Addressing root causes, not just symptoms",
-        },
-      ]
+export default function About({ drname, drGender }) {
 
+  const values = [
+    {
+      title: "Evidence-Based",
+      description: "Every treatment backed by peer-reviewed research",
+    },
+    {
+      title: "Personalized",
+      description: "Protocols tailored to your skin's unique biology",
+    },
+    {
+      title: "Holistic",
+      description: "Addressing root causes, not just symptoms",
+    },
+  ];
+
+  const bio = [
+    `With over a decade of specialized practice, Dr. ${drname} has transformed the dermatological landscape in Mumbai. Her approach transcends conventional treatment—she views each patient as a unique canvas requiring personalized artistry.`,
+    `Trained at Johns Hopkins and King's College London, she brings global standards to Indian skin. Her clinic represents the convergence of medical rigor and luxury experience.`,
+    `Beyond the clinic, Dr. ${drname} is a sought-after speaker on ethnic skin dermatology and has published extensively on laser treatments for melanin-rich complexions.`,
+  ]
 
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
@@ -85,7 +92,7 @@ export default function About({ data }) {
             <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
               <div ref={imageRef} className="absolute inset-0 scale-125">
                 <Image
-                  src={data.drImage}
+                  src={drGender === 'fd' ? "/images/female-doc-img.png" : "/images/male-doc-img.png"}
                   alt="doctor-jpg"
                   fill
                   className="object-cover"
@@ -107,12 +114,12 @@ export default function About({ data }) {
           <div className="space-y-8">
             <div className="about-text">
               <SectionTitle>The Doctor</SectionTitle>
-              <h2 className="text-5xl lg:text-7xl font-light text-slate-900 mb-2">{data.drname}</h2>
-              <p className="text-teal-600 text-lg tracking-wide">{data.drCred}</p>
+              <h2 className="text-5xl lg:text-7xl font-light text-slate-900 mb-2">{drname}</h2>
+              <p className="text-teal-600 text-lg tracking-wide">Consultant Dermatologist, Cosmetologist and Hair Transplant Surgeon</p>
             </div>
 
             <div className="space-y-6">
-              {data.drBio.map((paragraph, index) => (
+              {bio.map((paragraph, index) => (
                 <BodyText key={index} className="about-text">
                   {paragraph}
                 </BodyText>

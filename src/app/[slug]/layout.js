@@ -1,5 +1,5 @@
 import '../globals.css';
-import {supabase} from "@/lib/supabase";
+//import {supabase} from "@/lib/supabase";
 
 
 export const metadata = {
@@ -7,6 +7,7 @@ export const metadata = {
   description: 'Advanced dermatological care where medical precision meets aesthetic artistry.',
 };
 
+/*
 export async function getClientData(slug) {
   const { data, error } = await supabase
     .schema("labs")
@@ -22,6 +23,7 @@ export async function getClientData(slug) {
   return data.client_details
 
 }
+*/
 
 export default function SlugLayout({ children }) {
   return (
